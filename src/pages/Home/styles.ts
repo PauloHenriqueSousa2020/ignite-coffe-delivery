@@ -46,12 +46,6 @@ export const TextContainer = styled.div`
     grid-template-columns: 1fr 1fr;
     margin-top: 3rem;
     gap: 1rem;
-
-    div {
-      svg {
-
-      }
-    }
   }
 `
 
