@@ -5,6 +5,9 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 70rem;
+  margin: 0 auto;
+  background: ${({ theme }) => theme.colors.background};
 `
 
 export const Aside = styled.aside`

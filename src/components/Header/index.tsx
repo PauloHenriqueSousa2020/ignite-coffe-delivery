@@ -1,14 +1,14 @@
+import { Link } from "react-router-dom";
 import { MapPin, ShoppingCart } from "phosphor-react";
 
 import * as S from "./styles";
-import { Link } from "react-router-dom";
 
 export function Header() {
   const cart = null
   return (
     <S.HeaderContainer>
       <Link to="/">
-        <img src="/public/logo.svg" alt="Imagem de um copo de café com o texto Coffe Delivery ao lado" />
+        <img src="/logo.svg" alt="Imagem de um copo de café com o texto Coffe Delivery ao lado" />
       </Link>
 
       <S.Aside>
