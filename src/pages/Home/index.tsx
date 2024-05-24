@@ -1,6 +1,6 @@
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
-import { InputQuantity } from "@/components/InputQuantity";
 import { coffees } from "../../data.json";
+import { CoffeCard } from "@/components/CoffeCard";
 import * as S from "./styles";
 export function Home() {
 
@@ -14,7 +14,7 @@ export function Home() {
             <p>
               Encontre o café perfeito para qualquer hora do dia
             </p>
-            <span>Com o Coffe Delivery você recebeu seu café onde estiver, a qualquer hora</span>
+            <span>Com o Coffe Delivery você recebe seu café onde estiver, a qualquer hora</span>
 
             <div className="infosContainer">
               <S.ShoppingInfoContainer coffeColors="yellowDark">
@@ -52,39 +52,9 @@ export function Home() {
 
         <div className="coffeList">
           {coffees.map(coffe => (
-            <S.CoffeCard key={coffe.id}>
-              <img src={coffe.image} />
-
-              <div className="tags">
-                {coffe.tags.map(tag => (
-                  <span className="tag" key={tag}>{tag}</span>
-                ))}
-              </div>
-
-              <p className="coffeTitle">{coffe.title}</p>
-
-              <span className="coffeDescription">
-                {coffe.description}
-              </span>
-
-
-              <div className="coffePriceContainer">
-                <div className="priceWrapper">
-                  <span className="cipher">R$ </span>
-                  <span className="price">{coffe.price.toFixed(2)}</span>
-                </div>
-                <div className="coffePriceShopping">
-
-                  <InputQuantity />
-                  <button className="shoppingCartButton">
-                    <ShoppingCart size={18} weight="fill" />
-                  </button>
-                </div>
-              </div>
-            </S.CoffeCard>
+            <CoffeCard coffe={coffe} key={coffe.id} />
           ))}
         </div>
-
       </S.CoffeListContainer>
     </S.Container>
   )
