@@ -1,17 +1,15 @@
-import { useState } from "react";
 import { Minus, Plus } from "phosphor-react";
 
 import * as S from "./styles";
 
-export function InputQuantity() {
-  const [value, setValue] = useState(0);
+interface InputQuantityProps {
+  value: number,
+  handleDecrementValue: () => void;
+  handleIncrementValue: () => void;
+}
 
-  function handleIncrementValue() {
-    setValue(value + 1)
-  }
-  function handleDecrementValue() {
-    setValue(value === 0 ? 0 : value - 1)
-  }
+export function InputQuantity({ value, handleDecrementValue, handleIncrementValue }: InputQuantityProps) {
+
   return (
     <S.InputQuantity>
       <button onClick={handleDecrementValue}>

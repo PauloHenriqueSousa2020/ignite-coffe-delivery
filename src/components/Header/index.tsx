@@ -1,10 +1,13 @@
+import { useContext } from "react";
+import { CoffeContext } from "@/context/CoffeContext";
 import { Link } from "react-router-dom";
 import { MapPin, ShoppingCart } from "phosphor-react";
 
 import * as S from "./styles";
 
 export function Header() {
-  const cart = null
+  const { coffes } = useContext(CoffeContext);
+
   return (
     <S.HeaderContainer>
       <Link to="/">
@@ -17,9 +20,9 @@ export function Header() {
           <span> Porto Alegre, RS</span>
         </div>
 
-        <Link to="/cart" aria-disabled={!cart}>
+        <Link to="/cart" aria-disabled={coffes?.length === 0}>
           <ShoppingCart size={22} weight="fill" />
-          {!!cart && <span>3</span>}
+          {coffes?.length > 0 && <span>{coffes?.length}</span>}
         </Link>
       </S.Aside>
     </S.HeaderContainer>

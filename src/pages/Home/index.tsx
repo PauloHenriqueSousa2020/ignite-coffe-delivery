@@ -2,8 +2,9 @@ import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
 import { coffees } from "../../data.json";
 import { CoffeCard } from "@/components/CoffeCard";
 import * as S from "./styles";
-export function Home() {
 
+export function Home() {
+  
   return (
     <S.Container>
       <img src="/coffe-delivery-bg.svg" id="coffe-delivery-bg" />

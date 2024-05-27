@@ -78,14 +78,29 @@ export const CoffeCard = styled.div`
         border-radius: 6px;
         padding: 0.5rem;
         transition: all 0.2s;
+
+       &:disabled {
+          cursor: not-allowed;
+        }
   
         svg {
           color: ${({ theme }) => theme.colors.white};
         }
 
-        &:hover {
+        &:hover:not(:disabled) {
           background: ${({ theme }) => theme.colors.purple};
         }
+      }
+
+      .checkCartButton {
+        background: ${({ theme }) => theme.colors.yellowDark};
+        display: flex;
+        align-items: center;
+        border-radius: 6px;
+        padding: 0.5rem;
+        transition: all 0.2s;
+        color: ${({ theme }) => theme.colors.baseCard};
+        pointer-events: none;
       }
     }
 
