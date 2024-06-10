@@ -107,3 +107,125 @@ export const PaymentOptions = styled.div`
     gap: 12px;
   }
 `
+
+export const CartTotal = styled.div`
+  padding: 40px;
+  border-radius: 6px 36px;
+  background-color: ${({ theme }) => theme.colors.baseCard};
+  width: 100%;
+  min-width: 448px;
+
+  > span {
+    display: block;
+    height: 1px;
+    background-color: ${({ theme }) => theme.colors.baseButton};
+    margin: 24px 0;
+  }
+`
+export const CoffeeInfo = styled.div`
+  display: flex;
+  gap: 8px;
+
+  > button {
+    padding: 6px 8px;
+    background-color: ${({ theme }) => theme.colors.baseButton};
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.baseHover};
+    }
+
+    > svg {
+      color: ${({ theme }) => theme.colors.purple};
+    }
+
+    > span {
+      ${({ theme }) => theme.fonts.buttonM};
+      text-transform: uppercase;
+      color: ${({ theme }) => theme.colors.baseText};
+    }
+  }
+`
+export const Coffee = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  > div {
+    > img {
+      width: 64px;
+      height: 64px;
+    }
+
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  > aside {
+    font-weight: bold;
+  }
+`
+
+export const CartTotalInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span:first-child {
+      ${({ theme }) => theme.fonts.textS};
+    }
+
+    span:last-child {
+      ${({ theme }) => theme.fonts.textM};
+    }
+  }
+  
+
+  div:last-child {
+    span {
+      ${({ theme }) => theme.fonts.textL};
+      font-weight: bold;
+    }
+  }
+`
+
+export const CheckoutButton = styled.button`
+  margin-top: 24px;
+  width: 100%;
+  padding: 12px;
+  text-transform: uppercase;
+
+  ${({ theme }) => theme.fonts.buttonG};
+  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.yellow};
+
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.yellowDark};
+  }
+
+  border-radius: 6px;
+`
+
+export const PaymentErrorMessage = styled.p`
+  ${({ theme }) => theme.fonts.textXS};
+  font-weight: 400;
+  color: red;
+`

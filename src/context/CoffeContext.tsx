@@ -4,6 +4,7 @@ import { CoffeProps, CoffeMarketProps } from "@/@types/CoffeInterface";
 interface CoffeContextProps {
   coffes: CoffeMarketProps[];
   handleAddCoffe: (coffe: CoffeProps, quantity: number) => void;
+  removeItem: (itemId: string) => void
 }
 
 export const CoffeContext = createContext({} as CoffeContextProps)
@@ -14,11 +15,17 @@ export function CyclesContextProvider({ children }: { children: ReactNode }) {
   function handleAddCoffe(coffe: CoffeProps, quantity: number) {
     setCoffes((state) => [...state, { ...coffe, quantity }])
   }
+
+  function removeItem (itemId: string) {
+    const filteredCoffes = coffes.filter(coffe => coffe.id !== itemId)
+    setCoffes(filteredCoffes)
+  }
   
   return (
     <CoffeContext.Provider value={{
       coffes,
-      handleAddCoffe
+      handleAddCoffe,
+      removeItem
     }}>
       {children}
     </CoffeContext.Provider>
