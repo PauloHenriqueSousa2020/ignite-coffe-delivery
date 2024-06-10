@@ -15,7 +15,7 @@
 
 <h3> Aplicação </h3>
 <img src="/src/assets/screen.png">
-<img src="/src/assets/screen-cart.png">
+<img src="/src/assets/screen_cart.png">
 
 
 <h3> Para utilizar: </h3>
